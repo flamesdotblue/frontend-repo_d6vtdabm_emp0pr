@@ -2,10 +2,12 @@ import Navigation from './components/Navigation'
 import HeroSection from './components/HeroSection'
 import PlatformScroller from './components/PlatformScroller'
 import AIDemosPanel from './components/AIDemosPanel'
+import BackgroundFX from './components/BackgroundFX'
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-white">
+      <BackgroundFX />
       <Navigation />
       <main>
         <HeroSection />

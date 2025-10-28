@@ -13,12 +13,12 @@ export default function Navigation() {
 
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${
-      scrolled ? 'backdrop-blur-md bg-slate-950/60 shadow-[0_2px_24px_rgba(0,0,0,0.35)]' : 'bg-transparent'
+      scrolled ? 'backdrop-blur-xl bg-slate-950/60 shadow-[0_8px_40px_rgba(0,0,0,0.45)] border-b border-white/10' : 'bg-transparent'
     }`}
     aria-label="Primary">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main navigation">
-        <a href="#home" className="flex items-center gap-2 text-white font-semibold tracking-wide">
-          <span className="inline-block w-2 h-6 bg-gradient-to-b from-amber-300 to-rose-400 rounded-sm" aria-hidden="true" />
+        <a href="#home" className="flex items-center gap-3 text-white font-semibold tracking-wide">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-gradient-to-br from-amber-300 to-rose-400 text-slate-900 font-bold">V</span>
           <span className="text-lg">Vriksha.ai</span>
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm">
