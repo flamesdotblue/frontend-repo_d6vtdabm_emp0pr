@@ -9,11 +9,9 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-[92vh] pt-24 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
-      {/* Decorative layered background lines */}
+      {/* Rich decorative gradient lines: multiple layers with parallax-like offsets */}
       <div className="absolute inset-0 pointer-events-none">
-        <svg className="absolute -top-24 left-1/2 -translate-x-1/2 opacity-[0.12]" width="1400" height="600" viewBox="0 0 1400 600" fill="none" aria-hidden="true">
-          <path d="M0 300 C 200 200, 400 400, 600 300 S 1000 200, 1400 300" stroke="url(#g1)" strokeWidth="2" />
-          <path d="M0 350 C 180 250, 420 450, 620 320 S 980 250, 1400 330" stroke="url(#g2)" strokeWidth="1" opacity="0.7" />
+        <svg className="absolute -top-28 left-1/2 -translate-x-1/2 opacity-[0.14]" width="1600" height="900" viewBox="0 0 1600 900" fill="none" aria-hidden="true">
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor="#fb7185" />
@@ -23,7 +21,33 @@ export default function HeroSection() {
               <stop offset="0%" stopColor="#fbbf24" />
               <stop offset="100%" stopColor="#fb7185" />
             </linearGradient>
+            <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#fb7185" />
+              <stop offset="50%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#fbbf24" />
+            </linearGradient>
           </defs>
+          {/* main waves */}
+          <path d="M-50 420 C 200 320, 400 540, 650 430 S 1100 320, 1650 420" stroke="url(#g1)" strokeWidth="2" />
+          <path d="M-50 480 C 220 360, 420 600, 700 470 S 1080 360, 1650 460" stroke="url(#g2)" strokeWidth="1.5" opacity="0.8" />
+          <path d="M-50 540 C 260 420, 460 660, 730 520 S 1060 400, 1650 520" stroke="url(#g3)" strokeWidth="1.2" opacity="0.65" />
+          {/* subtle higher frequency lines */}
+          <g opacity="0.5">
+            <path d="M-50 360 C 180 320, 380 380, 640 360 S 1120 320, 1650 350" stroke="url(#g2)" strokeWidth="0.8" />
+            <path d="M-50 590 C 220 560, 420 620, 700 600 S 1120 560, 1650 590" stroke="url(#g1)" strokeWidth="0.8" />
+          </g>
+        </svg>
+        {/* angled accent lines */}
+        <svg className="absolute top-0 right-0 opacity-[0.12]" width="900" height="900" viewBox="0 0 900 900" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#fbbf24" />
+              <stop offset="100%" stopColor="#fb7185" />
+            </linearGradient>
+          </defs>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <line key={i} x1={-100 + i * 80} y1={0} x2={300 + i * 80} y2={900} stroke="url(#g4)" strokeWidth="0.6" />
+          ))}
         </svg>
       </div>
 
@@ -53,7 +77,7 @@ export default function HeroSection() {
               Try Live AI Demos
             </a>
             <div className="ml-2 hidden lg:flex items-center gap-1 border border-white/10 rounded-full overflow-hidden">
-              <button onClick={()=>setMode('tree')} className={`px-3 py-1.5 text-xs ${mode==='tree' ? 'bg-white/15' : 'bg-transparent'} hover:bg-white/10`}>Data Tree</button>
+              <button onClick={()=>setMode('tree')} className={`px-3 py-1.5 text-xs ${mode==='tree' ? 'bg-white/15' : 'bg-transparent'} hover:bg-white/10`}>Aurora Flow</button>
               <button onClick={()=>setMode('robot')} className={`px-3 py-1.5 text-xs ${mode==='robot' ? 'bg-white/15' : 'bg-transparent'} hover:bg-white/10`}>3D Robot</button>
             </div>
           </div>
